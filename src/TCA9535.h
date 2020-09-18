@@ -20,11 +20,30 @@ class TCA9535
   public:
  
   TCA9535();
- 
+
+  /*!
+   * @brief Starts I2C connection with default address 0x20
+   */
   void begin();
+
+  /*!
+   * @brief Starts I2C connection
+   * @param address I2C Address
+   */
   void begin(uint8_t address);
 
+  /*!
+   * @brief Writes to register
+   * @param registerNumber, number of addressed register
+   * @param value, Value to be written
+   */
+
   void write(uint8_t registerNumber, uint8_t value);
+  /*!
+   * @brief Reads from register
+   * @param registerNumber, number of addressed register
+   * @return value of register
+   */
   uint8_t read(uint8_t registerNumber);
 
   private:
