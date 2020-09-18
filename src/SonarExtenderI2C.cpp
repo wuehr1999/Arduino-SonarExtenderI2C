@@ -19,6 +19,14 @@
     tca.write(TCA9535_REGISTER_OUTPUT0, 0b00000111);
   }
 
+  void SonarExtenderI2C:begin(uint8_t address)
+  {
+    tca.begin(address);
+    tca.write(TCA9535_REGISTER_CONFIG0, 0b00001000);
+    tca.write(TCA9535_REGISTER_CONFIG1, 0b11111111);
+    tca.write(TCA9535_REGISTER_OUTPUT0, 0b00000111);
+  }
+
   uint8_t SonarExtenderI2C::getMeasurementRaw(uint8_t sensorNumber)
   {
     uint8_t measurement;

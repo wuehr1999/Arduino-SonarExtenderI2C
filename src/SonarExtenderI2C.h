@@ -14,6 +14,7 @@ class SonarExtenderI2C
   SonarExtenderI2C();
 
   void begin();
+  void begin(uint8_t address);
   
   uint8_t getMeasurementRaw(uint8_t sensorNumber);
   uint8_t getMeasurementCm(uint8_t sensorNumber);
